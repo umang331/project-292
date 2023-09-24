@@ -1,0 +1,741 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/trees/protos/Forest.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/OldSteel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.3602250763592414 0.00892655073683646 0.9328227114805477 3.0953771437049946
+  position 1.196234095437594 4.888265488149759 3.555856252773902
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Robot {
+  translation -3.030445650004863 4.874865460832281 0.15983281467951568
+  rotation 0.990684316837268 -0.13451751952273777 0.021204275845349795 0.02469817584011673
+  children [
+    DEF base_torso Shape {
+      appearance OldSteel {
+      }
+      geometry Box {
+        size 0.8 0.3 0.1
+      }
+    }
+    DEF rightLeg1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 0.9314315137408239
+        anchor 0.31 -0.18 0
+      }
+      device [
+        RotationalMotor {
+          name "rightLegVertical1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.3 -0.17998998901465768 2.040373514379233e-06
+        rotation -1.2474976822895209e-07 0.03427752717577949 0.9994123529007924 3.1415898483036067
+        children [
+          DEF hip_joint Shape {
+            appearance PBRAppearance {
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.05
+            }
+          }
+          DEF leftLeftHorizintal1 HingeJoint {
+            jointParameters HingeJointParameters {
+              position 1.234998375067996e-05
+              axis 0 0 1
+              stopCFM 2
+            }
+            device [
+              RotationalMotor {
+                name "leftLegHorizontal1"
+              }
+            ]
+            endPoint Solid {
+              translation 0.007784977811898433 0.14106809615510663 0.11046199999999937
+              rotation 0.6715176795402122 0.6588033279851565 -0.33917868609423407 2.56271461464817
+              children [
+                DEF thigh Shape {
+                  appearance PBRAppearance {
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.3
+                    radius 0.03
+                  }
+                }
+                Solid {
+                  translation -6.82356197588041e-05 -4.93965396133343e-05 -0.16039615067044916
+                  rotation 1.6504199957195536e-05 0.9999999974064502 7.010499981817918e-05 -0.28961530717958617
+                  children [
+                    DEF knee Shape {
+                      appearance PBRAppearance {
+                        metalness 0
+                      }
+                      geometry Sphere {
+                        radius 0.05
+                      }
+                    }
+                    Solid {
+                      translation 0.19485 0 -0.0142444
+                      rotation 0 -1 0 1.5
+                      children [
+                        DEF leg Shape {
+                          appearance PBRAppearance {
+                            metalness 0
+                          }
+                          geometry Cylinder {
+                            height 0.4
+                            radius 0.03
+                          }
+                        }
+                        Solid {
+                          translation 0.000577156 0 -0.21211
+                          rotation 0 1 0 0.58
+                          children [
+                            DEF foot Shape {
+                              appearance PBRAppearance {
+                                metalness 0
+                              }
+                              geometry Sphere {
+                                radius 0.04
+                              }
+                            }
+                          ]
+                          boundingObject USE foot
+                          physics DEF dog Physics {
+                            mass 1
+                          }
+                        }
+                      ]
+                      boundingObject USE leg
+                      physics USE dog
+                    }
+                  ]
+                  boundingObject USE knee
+                  physics USE dog
+                }
+              ]
+              boundingObject USE thigh
+              physics DEF dog Physics {
+                mass 1
+              }
+              linearVelocity -4.242296076811814e-06 4.855777025358776e-05 -7.911933519790182e-05
+              angularVelocity -0.00046924008688413725 -1.4274475403123529e-05 -4.392767988147375e-06
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE hip_joint
+        physics DEF dog Physics {
+          mass 1
+        }
+        linearVelocity -1.9653919579232238e-06 1.8263493120770137e-05 -0.00021931220688463783
+        angularVelocity -0.0004692402112027594 -1.4282907470519746e-05 -4.353169699711222e-06
+      }
+    }
+    DEF rightLeg2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 0.9292596281586172
+        anchor 0 -0.18 0
+      }
+      device [
+        RotationalMotor {
+          name "rightLegVertical1"
+        }
+      ]
+      endPoint Solid {
+        translation 0 -0.18 0
+        rotation -4.6919197488653054e-08 0.03536281140317738 0.9993745401848405 3.1415900016597136
+        children [
+          DEF hip_joint Shape {
+            appearance PBRAppearance {
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.05
+            }
+          }
+          DEF leftLeftHorizintal1 HingeJoint {
+            jointParameters HingeJointParameters {
+              position 1.2557056491682123e-05
+              axis 0 0 1
+              stopCFM 2
+            }
+            device [
+              RotationalMotor {
+                name "leftLegHorizontal1"
+              }
+            ]
+            endPoint Solid {
+              translation 0.0077849486005409346 0.14106809776716023 0.1104619999999995
+              rotation 0.6715176183528406 0.6588034044014286 -0.3391786588080335 2.562714544413512
+              children [
+                DEF thigh Shape {
+                  appearance PBRAppearance {
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.3
+                    radius 0.03
+                  }
+                }
+                Solid {
+                  translation -6.82356197588041e-05 -4.93965396133343e-05 -0.16039615067044916
+                  rotation 1.6504199957195536e-05 0.9999999974064502 7.010499981817918e-05 -0.28961530717958617
+                  children [
+                    DEF knee Shape {
+                      appearance PBRAppearance {
+                        metalness 0
+                      }
+                      geometry Sphere {
+                        radius 0.05
+                      }
+                    }
+                    Solid {
+                      translation 0.19485 0 -0.0142444
+                      rotation 0 -1 0 1.5
+                      children [
+                        DEF leg Shape {
+                          appearance PBRAppearance {
+                            metalness 0
+                          }
+                          geometry Cylinder {
+                            height 0.4
+                            radius 0.03
+                          }
+                        }
+                        Solid {
+                          translation 0.000577156 0 -0.21211
+                          rotation 0 1 0 0.58
+                          children [
+                            DEF foot Shape {
+                              appearance PBRAppearance {
+                                metalness 0
+                              }
+                              geometry Sphere {
+                                radius 0.04
+                              }
+                            }
+                          ]
+                          boundingObject USE foot
+                          physics DEF dog Physics {
+                            mass 1
+                          }
+                        }
+                      ]
+                      boundingObject USE leg
+                      physics USE dog
+                    }
+                  ]
+                  boundingObject USE knee
+                  physics USE dog
+                }
+              ]
+              boundingObject USE thigh
+              physics DEF dog Physics {
+                mass 1
+              }
+              linearVelocity -4.277276814746323e-06 5.1092545843985704e-05 -7.506322930674969e-05
+              angularVelocity -0.0004977185911040733 -1.428950040784665e-05 -4.4955838283815375e-06
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE hip_joint
+        physics DEF dog Physics {
+          mass 1
+        }
+        linearVelocity -1.9558918511508595e-06 1.8872056927193626e-05 -0.0002236140284371686
+        angularVelocity -0.0004977187498980129 -1.429744003633715e-05 -4.4458476151643095e-06
+      }
+    }
+    DEF rightLeg3 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 0.9270749365121188
+        anchor -0.31 -0.18 0
+      }
+      device [
+        RotationalMotor {
+          name "rightLegVertical1"
+        }
+      ]
+      endPoint Solid {
+        translation -0.3 -0.17998998511576236 2.0858200567676307e-06
+        rotation -1.4328262100433673e-07 0.03645445268830119 0.9993353155368703 3.14159000806635
+        children [
+          DEF hip_joint Shape {
+            appearance PBRAppearance {
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.05
+            }
+          }
+          DEF leftLeftHorizintal1 HingeJoint {
+            jointParameters HingeJointParameters {
+              position 1.2761937319626814e-05
+              axis 0 0 1
+              stopCFM 2
+            }
+            device [
+              RotationalMotor {
+                name "leftLegHorizontal1"
+              }
+            ]
+            endPoint Solid {
+              translation 0.007784919698392109 0.14106809936214412 0.11046199999999956
+              rotation 0.6715175578131442 0.6588034800088113 -0.33917863181065905 2.5627144749223105
+              children [
+                DEF thigh Shape {
+                  appearance PBRAppearance {
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.3
+                    radius 0.03
+                  }
+                }
+                Solid {
+                  translation -6.82356197588041e-05 -4.93965396133343e-05 -0.16039615067044916
+                  rotation 1.6504199957195536e-05 0.9999999974064502 7.010499981817918e-05 -0.28961530717958617
+                  children [
+                    DEF knee Shape {
+                      appearance PBRAppearance {
+                        metalness 0
+                      }
+                      geometry Sphere {
+                        radius 0.05
+                      }
+                    }
+                    Solid {
+                      translation 0.19485 0 -0.0142444
+                      rotation 0 -1 0 1.5
+                      children [
+                        DEF leg Shape {
+                          appearance PBRAppearance {
+                            metalness 0
+                          }
+                          geometry Cylinder {
+                            height 0.4
+                            radius 0.03
+                          }
+                        }
+                        Solid {
+                          translation 0.000577156 0 -0.21211
+                          rotation 0 1 0 0.58
+                          children [
+                            DEF foot Shape {
+                              appearance PBRAppearance {
+                                metalness 0
+                              }
+                              geometry Sphere {
+                                radius 0.04
+                              }
+                            }
+                          ]
+                          boundingObject USE foot
+                          physics DEF dog Physics {
+                            mass 1
+                          }
+                        }
+                      ]
+                      boundingObject USE leg
+                      physics USE dog
+                    }
+                  ]
+                  boundingObject USE knee
+                  physics USE dog
+                }
+              ]
+              boundingObject USE thigh
+              physics DEF dog Physics {
+                mass 1
+              }
+              linearVelocity -4.2842844442516625e-06 5.3319144304417424e-05 -7.337386657223987e-05
+              angularVelocity -0.0005180964230080413 -1.4298961029813074e-05 -4.539855882466135e-06
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE hip_joint
+        physics DEF dog Physics {
+          mass 1
+        }
+        linearVelocity -1.941303208819356e-06 1.957294056009573e-05 -0.00022788982782037692
+        angularVelocity -0.0005180965044928594 -1.4307304498473157e-05 -4.513459250343742e-06
+      }
+    }
+    DEF leftLeg1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1.0000297496890174
+        anchor 0.31 0.18 0
+      }
+      device [
+        RotationalMotor {
+          name "leftLegVertical1"
+          maxTorque 50
+        }
+      ]
+      endPoint Solid {
+        translation 0.3 0.17998999999967336 2.4096286443792013e-06
+        rotation 0.9847308065630423 0.003287843994273955 -0.1740529479427716 3.034271610796059e-05
+        children [
+          DEF hip_joint Shape {
+            appearance PBRAppearance {
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.05
+            }
+          }
+          DEF leftLeftHorizintal1 HingeJoint {
+            jointParameters HingeJointParameters {
+              position 1.4293803169039259e-05
+              axis 0 0 1
+              stopCFM 2
+            }
+            device [
+              RotationalMotor {
+                name "leftLegHorizontal1"
+              }
+            ]
+            endPoint Solid {
+              translation 0.007784703600979113 0.14106811128743113 0.11046199999999952
+              rotation 0.6715171051658794 0.6588040453146824 -0.33917842995486525 2.562713955346301
+              children [
+                DEF thigh Shape {
+                  appearance PBRAppearance {
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.3
+                    radius 0.03
+                  }
+                }
+                Solid {
+                  translation -6.82356197588041e-05 -4.93965396133343e-05 -0.16039615067044916
+                  rotation 1.6504199957195536e-05 0.9999999974064502 7.010499981817918e-05 -0.28961530717958617
+                  children [
+                    DEF knee Shape {
+                      appearance PBRAppearance {
+                        metalness 0
+                      }
+                      geometry Sphere {
+                        radius 0.05
+                      }
+                    }
+                    Solid {
+                      translation 0.19485 0 -0.0142444
+                      rotation 0 -1 0 1.5
+                      children [
+                        DEF leg Shape {
+                          appearance PBRAppearance {
+                            metalness 0
+                          }
+                          geometry Cylinder {
+                            height 0.4
+                            radius 0.03
+                          }
+                        }
+                        Solid {
+                          translation 0.000577156 0 -0.21211
+                          rotation 0 1 0 0.58
+                          children [
+                            DEF foot Shape {
+                              appearance PBRAppearance {
+                                metalness 0
+                              }
+                              geometry Sphere {
+                                radius 0.04
+                              }
+                            }
+                          ]
+                          boundingObject USE foot
+                          physics DEF dog Physics {
+                            mass 1
+                          }
+                        }
+                      ]
+                      boundingObject USE leg
+                      physics USE dog
+                    }
+                  ]
+                  boundingObject USE knee
+                  physics USE dog
+                }
+              ]
+              boundingObject USE thigh
+              physics DEF dog Physics {
+                mass 1
+              }
+              linearVelocity -1.59271821802065e-06 -3.309351540039529e-07 -3.824498240129515e-05
+              angularVelocity 0.0002740785827069857 -1.3951075441498943e-05 -1.72924483049176e-06
+            }
+          }
+        ]
+        name "solid(4)"
+        boundingObject USE hip_joint
+        physics DEF dog Physics {
+          mass 1
+        }
+        linearVelocity -1.3357884280891241e-06 1.5622753060995365e-05 -0.00012064353981168097
+        angularVelocity 0.0002740847116342592 -1.3940600189332738e-05 -1.868814274219587e-06
+      }
+    }
+    DEF leftLeg2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1.001926159056904
+        anchor 0 0.18 0
+      }
+      device [
+        RotationalMotor {
+          name "rightLegVertical1"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.18 0
+        rotation 0.9999962044053085 2.6534849384687128e-06 -0.002755207421518584 0.001926166367641171
+        children [
+          DEF hip_joint Shape {
+            appearance PBRAppearance {
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.05
+            }
+          }
+          DEF leftLeftHorizintal1 HingeJoint {
+            jointParameters HingeJointParameters {
+              position 1.1810995924867281e-05
+              axis 0 0 1
+              stopCFM 2
+            }
+            device [
+              RotationalMotor {
+                name "leftLegHorizontal1"
+              }
+            ]
+            endPoint Solid {
+              translation 0.0077850538458837425 0.1410680919590778 0.11046199999999948
+              rotation 0.671517838804247 0.6588031290818858 -0.3391787571172308 2.5627147974613713
+              children [
+                DEF thigh Shape {
+                  appearance PBRAppearance {
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.3
+                    radius 0.03
+                  }
+                }
+                Solid {
+                  translation -6.82356197588041e-05 -4.93965396133343e-05 -0.16039615067044916
+                  rotation 1.6504199957195536e-05 0.9999999974064502 7.010499981817918e-05 -0.28961530717958617
+                  children [
+                    DEF knee Shape {
+                      appearance PBRAppearance {
+                        metalness 0
+                      }
+                      geometry Sphere {
+                        radius 0.05
+                      }
+                    }
+                    Solid {
+                      translation 0.19485 0 -0.0142444
+                      rotation 0 -1 0 1.5
+                      children [
+                        DEF leg Shape {
+                          appearance PBRAppearance {
+                            metalness 0
+                          }
+                          geometry Cylinder {
+                            height 0.4
+                            radius 0.03
+                          }
+                        }
+                        Solid {
+                          translation 0.000577156 0 -0.21211
+                          rotation 0 1 0 0.58
+                          children [
+                            DEF foot Shape {
+                              appearance PBRAppearance {
+                                metalness 0
+                              }
+                              geometry Sphere {
+                                radius 0.04
+                              }
+                            }
+                          ]
+                          boundingObject USE foot
+                          physics DEF dog Physics {
+                            mass 1
+                          }
+                        }
+                      ]
+                      boundingObject USE leg
+                      physics USE dog
+                    }
+                  ]
+                  boundingObject USE knee
+                  physics USE dog
+                }
+              ]
+              boundingObject USE thigh
+              physics DEF dog Physics {
+                mass 1
+              }
+              linearVelocity -1.6149690861453348e-06 -6.670644628030686e-07 -3.5586088579464104e-05
+              angularVelocity 0.00029751729548804117 -1.3935466336607735e-05 -1.6760180564111794e-06
+            }
+          }
+        ]
+        name "solid(5)"
+        boundingObject USE hip_joint
+        physics DEF dog Physics {
+          mass 1
+        }
+        linearVelocity -1.3284741313235316e-06 1.6635639691145343e-05 -0.00012492377148697642
+        angularVelocity 0.0002975176570885196 -1.3927321411033583e-05 -1.7863153773944867e-06
+      }
+    }
+    DEF leftLeg3 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1.0042763170730273
+        anchor -0.31 0.18 0
+      }
+      device [
+        RotationalMotor {
+          name "rightLegVertical1"
+        }
+      ]
+      endPoint Solid {
+        translation -0.3 0.1799889997551236 3.432775397973967e-06
+        rotation 0.9999990660537393 -2.0309184603315377e-07 -0.0013667083111953682 0.0042763206713727
+        children [
+          DEF hip_joint Shape {
+            appearance PBRAppearance {
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.05
+            }
+          }
+          DEF leftLeftHorizintal1 HingeJoint {
+            jointParameters HingeJointParameters {
+              position 1.1393914125790262e-05
+              axis 0 0 1
+              stopCFM 2
+            }
+            device [
+              RotationalMotor {
+                name "leftLegHorizontal1"
+              }
+            ]
+            endPoint Solid {
+              translation 0.007785112682816645 0.14106808871206122 0.1104619999999993
+              rotation 0.6715179620465662 0.6588029751657061 -0.33917881207652195 2.56271493892667
+              children [
+                DEF thigh Shape {
+                  appearance PBRAppearance {
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.3
+                    radius 0.03
+                  }
+                }
+                Solid {
+                  translation -6.82356197588041e-05 -4.93965396133343e-05 -0.16039615067044916
+                  rotation 1.6504199957195536e-05 0.9999999974064502 7.010499981817918e-05 -0.28961530717958617
+                  children [
+                    DEF knee Shape {
+                      appearance PBRAppearance {
+                        metalness 0
+                      }
+                      geometry Sphere {
+                        radius 0.05
+                      }
+                    }
+                    Solid {
+                      translation 0.19485 0 -0.0142444
+                      rotation 0 -1 0 1.5
+                      children [
+                        DEF leg Shape {
+                          appearance PBRAppearance {
+                            metalness 0
+                          }
+                          geometry Cylinder {
+                            height 0.4
+                            radius 0.03
+                          }
+                        }
+                        Solid {
+                          translation 0.000577156 0 -0.21211
+                          rotation 0 1 0 0.58
+                          children [
+                            DEF foot Shape {
+                              appearance PBRAppearance {
+                                metalness 0
+                              }
+                              geometry Sphere {
+                                radius 0.04
+                              }
+                            }
+                          ]
+                          boundingObject USE foot
+                          physics DEF dog Physics {
+                            mass 1
+                          }
+                        }
+                      ]
+                      boundingObject USE leg
+                      physics USE dog
+                    }
+                  ]
+                  boundingObject USE knee
+                  physics USE dog
+                }
+              ]
+              boundingObject USE thigh
+              physics DEF dog Physics {
+                mass 1
+              }
+              linearVelocity -2.4873352621344043e-06 1.0718034058214473e-06 -5.06845214367786e-05
+              angularVelocity 0.0002594488089079306 -1.4083973574226829e-05 1.6502489896597997e-06
+            }
+          }
+        ]
+        name "solid(6)"
+        boundingObject USE hip_joint
+        physics DEF dog Physics {
+          mass 1
+        }
+        linearVelocity -1.2496038481932862e-06 1.6874034483606693e-05 -0.00012891692233711185
+        angularVelocity 0.00025933694411151 -1.3960659820066946e-05 -1.95220826781916e-06
+      }
+    }
+  ]
+  boundingObject USE base_torso
+  physics DEF dog Physics {
+    mass 1
+  }
+  controller ""
+  linearVelocity -1.629335448589675e-06 1.765318092250823e-05 -0.00017421773818671228
+  angularVelocity 0.0002744378877631162 -1.3933551942816078e-05 -1.8513258806374544e-06
+}
+Forest {
+  density 0.08
+}
+Floor {
+  translation 0 0 -0.01
+}
